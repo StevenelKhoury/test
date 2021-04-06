@@ -1,5 +1,5 @@
 from django.db import models
-from rest_hooks.signals import hook_event
+#from rest_hooks.signals import hook_event
 # Create your models here.
 
 
@@ -7,7 +7,7 @@ class Utilisateur(models.Model):
     iduti = models.AutoField("num de l'utilisateur", primary_key=True)
     nom = models.CharField(max_length=40)
     prenom =models.CharField(max_length=40)
-    user = models.ForeignKey('auth.User')
+  #  user = models.ForeignKey('auth.User')
    # user = property(lambda self: self.intermediary.user)
 
     def serialize_hook(self, hook):

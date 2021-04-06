@@ -4,9 +4,9 @@ from .models import (
     Utilisateur
 )
 
-from rest_framework import viewsets
+#from rest_framework import viewsets
 from .models import *
-from .serializers import *
+#from .serializers import *
 
 
 from .forms import(
