@@ -1,4 +1,5 @@
 from django.db import models
+from env.mysiteWeb.App1.forms import Form_ajout_utilisateur
 #from rest_hooks.signals import hook_event
 # Create your models here.
 
@@ -24,8 +25,11 @@ class Utilisateur(models.Model):
             }
         }
 
-    def mark_as_add(self):
-        # models can also have custom defined events      
+    def mark_as_add(self,requete):
+        # models can also have custom defined events 
+        formulaire = Form_ajout_utilisateur(requete.POST) 
+        donnees = formulaire.cleaned_data  
+        utilisateur=Utilisateur(**donnees)   
         hook_event.send(
             sender=self.post_save,
             event_name='utilisateur.added',
