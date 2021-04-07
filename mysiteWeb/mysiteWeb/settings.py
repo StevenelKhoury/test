@@ -25,7 +25,7 @@ SECRET_KEY = 'i9!x0h1rk1#t!i-6cn-*1ojj8e8t^bmq^_7t%g1fqy%+tb@19q'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost','3b1447335c5a']
 
 
 # Application definition
@@ -39,14 +39,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'App1',
-  #  'rest_framework',
+    'rest_framework',
     'erp',
-    #'rest_hooks',
 ]
 
 HOOK_EVENTS = {
     # 'any.event.name': 'App.Model.Action' (created/updated/deleted)
     'utilisateur.added':       'App1.Utilisateur.created',
+    'user.logged_in':    None
 }
 
 MIDDLEWARE = [

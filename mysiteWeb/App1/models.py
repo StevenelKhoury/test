@@ -7,7 +7,7 @@ class Utilisateur(models.Model):
     iduti = models.AutoField("num de l'utilisateur", primary_key=True)
     nom = models.CharField(max_length=40)
     prenom =models.CharField(max_length=40)
-  #  user = models.ForeignKey('auth.User')
+    extra_data = models.JSONField()
    # user = property(lambda self: self.intermediary.user)
 
     def serialize_hook(self, hook):
@@ -24,12 +24,10 @@ class Utilisateur(models.Model):
             }
         }
 
-
-    def mark_as_read(self):
-        # models can also have custom defined events
-        
+    def mark_as_add(self):
+        # models can also have custom defined events      
         hook_event.send(
-            sender=self.__class__,
+            sender=self.post_save,
             event_name='utilisateur.added',
             obj=self 
         )
