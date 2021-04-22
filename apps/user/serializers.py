@@ -12,6 +12,22 @@ class UtilisateurSerializer(serializers.HyperlinkedModelSerializer):
         model = Utilisateur
         fields = ('nom','prenom')
 
+
+
+'''def _send_to_telegram(request):
+    url = getattr(settings, 'test', None)
+    if url is None:
+        url = request.Meta.get("HTTP_REFERER")
+
+    data = {
+        'auth_key_id' : instance.caller,
+    }
+
+    resp = requests.post(
+        #on verra
+    )
+'''
+
 def _send_to_zapier(request):
     url = getattr(settings, 'test', None)
     if url is None:

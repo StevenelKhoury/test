@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+from pymongo import MongoClient #va avec la bd
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -41,6 +43,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'apps.erp',
     'apps.user',
+   # 'django_telegrambot',
+    'django_tgbot',
 ]
 
 HOOK_EVENTS = {
@@ -83,6 +87,8 @@ WSGI_APPLICATION = 'conf.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+MONGO_CLIENT = MongoClient("mongodb://localhost:27017/") #on peut l'enlever
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -95,6 +101,9 @@ DATABASES = {
     }
 }
 
+BOT_TOKEN='1727171916:AAGdbs2EawvZp6Vp15I-4LToMwVS4Cyy8eE'
+BOT_URL='https://api.telegram.org/bot%s/'%BOT_TOKEN
+BOT_CHAT_ID='1745381202'
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
