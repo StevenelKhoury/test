@@ -27,7 +27,7 @@ SECRET_KEY = 'i9!x0h1rk1#t!i-6cn-*1ojj8e8t^bmq^_7t%g1fqy%+tb@19q'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost','3b1447335c5a']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost','3b1447335c5a','7876d1417f49.ngrok.io']
 
 
 # Application definition
@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'apps.user',
    # 'django_telegrambot',
     'django_tgbot',
+    'django_telegram_login',
 ]
 
 HOOK_EVENTS = {
@@ -101,9 +102,12 @@ DATABASES = {
     }
 }
 
-BOT_TOKEN='1727171916:AAGdbs2EawvZp6Vp15I-4LToMwVS4Cyy8eE'
-BOT_URL='https://api.telegram.org/bot%s/'%BOT_TOKEN
+TELEGRAM_BOT_NAME = 'test1steve_bot'
+TELEGRAM_BOT_TOKEN='1793178760:AAFxxH4YJ-cP7Ybu7oI-ZOs-aVOOg9rQbYo'
+BOT_URL='https://api.telegram.org/bot%s/'%TELEGRAM_BOT_TOKEN
 BOT_CHAT_ID='1745381202'
+TELEGRAM_LOGIN_REDIRECT_URL = 'https://7876d1417f49.ngrok.io/test'
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
