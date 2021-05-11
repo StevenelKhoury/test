@@ -26,7 +26,8 @@ SECRET_KEY = 'jne^m+=v(n!b0d$xdg3#0md95=$*t-u&33#(6&k^3_xq(8q2mg'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '039286a33436.ngrok.io',
+    'f9ffe266b4a1.ngrok.io',
+    '127.0.0.1',
 ]
 
 
@@ -75,7 +76,7 @@ WSGI_APPLICATION = 'telegram.wsgi.application'
 
 TELEGRAM_BOT_NAME = 'paulteleloginbot'
 TELEGRAM_BOT_TOKEN = '1790922238:AAEKlLJMuYNrva1bDsT2mmxHZNY_4okroJM'
-TELEGRAM_LOGIN_REDIRECT_URL = 'https://039286a33436.ngrok.io'
+TELEGRAM_LOGIN_REDIRECT_URL = 'https://f9ffe266b4a1.ngrok.io'
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
